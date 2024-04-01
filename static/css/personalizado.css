@@ -1,0 +1,31 @@
+#banner {
+    background-image: url("../img/disney-anuncios-estrenos.webp");
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+    height: 50vh; 
+    animation: fadeIn 0.5s ease; /* Animación de fadeIn al cargar la página */
+}
+
+#banner:hover {
+    background-image: url("../img/banner2.jpg");
+    animation: fadeOut 0.5s ease; /* Animación de fadeOut al pasar el ratón */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

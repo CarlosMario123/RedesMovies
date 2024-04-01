@@ -1,0 +1,5 @@
+otra manera de crear entorno virtual en windows
+python -m venv myenv
+
+activar entorno virtual en windows
+myenv\Scripts\activate

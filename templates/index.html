@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stream</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/personalizado.css') }}"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900">
+    <!--parte del nav-->
+    <nav class="w-full flex items-center px-2 py-3 justify-between">
+      <div class="flex items-center gap-x-32">
+        <h1 class="font-bold text-2xl text-white">
+          BD<span class="text-blue-600">Stream</span>
+        </h1>
+
+        <div class="text-white flex items-center gap-x-6">
+          <a href="">Home</a>
+          <a href="/unservice">Movies</a>
+          <a href="/unservice">Drama</a>
+          <a href="/unservice">Series</a>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-x-4">
+        <input type="text" class="py-1" />
+        <button class="bg-red-500 text-white w-32 py-1 rounded-sm">
+          Search
+        </button>
+      </div>
+    </nav>
+    <!--Banner de peliculas-->
+    <div
+      class="w-full mt-8 px-16 flex items-center flex-col justify-center"
+      id="banner"
+    >
+      <h2 class="text-white text-md font-bold">Bienvenidos a bd stream</h2>
+      <p class="text-white text-3xl font-bold">Mira tus peliculas favoritas</p>
+    </div>
+    <main class="w-full mt-5 font-bold flex flex-col px-6">
+      <section>
+        <h3 class="text-white text-xl">Mas Populares</h3>
+        <div class="w-full flex py-5 flex justify-evenly">
+            {% for movie in populares %}
+            <a href="/reproducir/{{ movie.id }}/{{ movie.name}}"><!--Esto nos permitira el redirecionamiento hacia la pelicula-->
+              <div class="flex flex-col items-center gap-y-3 hover:scale-125 duration-500 ease-in-out">
+                <img src="{{ movie.url }}" alt="" class="w-[10rem] h-[11rem]" />
+                <p class="text-white text-center text-sm">{{ movie.name }}</p>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+      </section>
+    </main>
+  </body>
+</html>
